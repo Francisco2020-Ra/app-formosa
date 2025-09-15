@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,18 +71,18 @@
             width: 60%;
             max-width: 400px;
             height: 400px;
-            /* Tamaño fijo para todas las imágenes */
             transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
+            cursor: pointer;
         }
 
         .carrusel-trabajo-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Asegura que las imágenes mantengan proporciones */
             border-radius: 12px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             border: 2px solid #2e7d32;
+            loading: lazy;
         }
 
         .carrusel-trabajo-item.active {
@@ -133,6 +132,7 @@
             margin: 10px;
             text-align: center;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .carrusel-guia-item:hover {
@@ -142,15 +142,15 @@
         .carrusel-guia-item img {
             width: 100%;
             height: 200px;
-            /* Tamaño fijo para todas las imágenes */
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid #2e7d32;
+            loading: lazy;
         }
 
         .carrusel-boton {
             position: absolute;
-            top: 50%;
+            top: 85%;
             transform: translateY(-50%);
             background-color: rgba(46, 125, 50, 0.8);
             color: white;
@@ -161,7 +161,6 @@
             border-radius: 50%;
             transition: background-color 0.3s ease;
             z-index: 15;
-            /* Aumentado para asegurar que los botones sean clicables */
         }
 
         .carrusel-boton:hover {
@@ -170,12 +169,10 @@
 
         .carrusel-boton.prev-trabajo {
             left: 20px;
-            /* Ajustado para mejor visibilidad */
         }
 
         .carrusel-boton.next-trabajo {
             right: 20px;
-            /* Ajustado para mejor visibilidad */
         }
 
         .carrusel-boton.prev-guia {
@@ -196,11 +193,11 @@
         .galeria img {
             width: 100%;
             height: 200px;
-            /* Tamaño fijo para todas las imágenes */
             object-fit: cover;
             border-radius: 12px;
             border: 1px solid #2e7d32;
             transition: transform 0.3s ease;
+            loading: lazy;
         }
 
         .galeria img:hover {
@@ -268,6 +265,189 @@
             margin: 0;
             font-size: 0.9em;
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-contenedor {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .modal-boton {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(46, 125, 50, 0.8);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            z-index: 110;
+        }
+
+        .modal-boton:hover {
+            background-color: rgba(46, 125, 50, 1);
+        }
+
+        .modal-boton.prev-modal {
+            left: 10px;
+        }
+
+        .modal-boton.next-modal {
+            right: 10px;
+        }
+
+        .modal-cerrar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+            z-index: 110;
+        }
+
+        .modal-cerrar:hover {
+            background-color: rgba(255, 0, 0, 1);
+        }
+
+        /* Media Queries for Mobile Optimization */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 10px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            section {
+                padding: 20px;
+                margin: 10px auto;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .carrusel-trabajo {
+                height: 300px;
+            }
+
+            .carrusel-trabajo-item {
+                width: 80%;
+                max-width: none;
+                height: 300px;
+            }
+
+            .carrusel-trabajo-item.left {
+                transform: translateX(-40%) scale(0.7);
+            }
+
+            .carrusel-trabajo-item.right {
+                transform: translateX(40%) scale(0.7);
+            }
+
+            .carrusel-guia-item {
+                flex: 0 0 100%;
+                margin: 5px;
+            }
+
+            .carrusel-guia-item img {
+                height: 150px;
+            }
+
+            .galeria {
+                grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            }
+
+            .galeria img {
+                height: 150px;
+            }
+
+            .mapa iframe {
+                height: 300px;
+            }
+
+            .info-turistica ul {
+                max-width: 100%;
+            }
+
+            .modal-contenedor {
+                width: 95%;
+                height: 70%;
+            }
+
+            .modal-boton {
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            .modal-cerrar {
+                top: 10px;
+                right: 10px;
+                padding: 8px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .modal-contenedor {
+                width: 98%;
+                height: 60%;
+            }
+        }
     </style>
 </head>
 
@@ -315,52 +495,52 @@
                     <img src="assets/4.jpg" alt="Trabajo de Campo 4">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="4">
-                    <img src="assets/5.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/5.jpg" alt="Trabajo de Campo 5">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="5">
-                    <img src="assets/6.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/6.jpg" alt="Trabajo de Campo 6">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="6">
-                    <img src="assets/7.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/7.jpg" alt="Trabajo de Campo 7">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="7">
-                    <img src="assets/8.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/8.jpg" alt="Trabajo de Campo 8">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="8">
-                    <img src="assets/9.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/9.jpg" alt="Trabajo de Campo 9">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="9">
-                    <img src="assets/10.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/10.jpg" alt="Trabajo de Campo 10">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="10">
-                    <img src="assets/11.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/11.jpg" alt="Trabajo de Campo 11">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="11">
-                    <img src="assets/12.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/12.jpg" alt="Trabajo de Campo 12">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="12">
-                    <img src="assets/13.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/13.jpg" alt="Trabajo de Campo 13">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="13">
-                    <img src="assets/14.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/14.jpg" alt="Trabajo de Campo 14">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="14">
-                    <img src="assets/15.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/15.jpg" alt="Trabajo de Campo 15">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="15">
-                    <img src="assets/16.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/16.jpg" alt="Trabajo de Campo 16">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="16">
-                    <img src="assets/17.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/17.jpg" alt="Trabajo de Campo 17">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="17">
-                    <img src="assets/18.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/18.jpg" alt="Trabajo de Campo 18">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="18">
-                    <img src="assets/19.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/19.jpg" alt="Trabajo de Campo 19">
                 </div>
                 <div class="carrusel-trabajo-item" data-index="19">
-                    <img src="assets/20.jpg" alt="Trabajo de Campo 4">
+                    <img src="assets/20.jpg" alt="Trabajo de Campo 20">
                 </div>
             </div>
             <button class="carrusel-boton prev-trabajo" onclick="moverCarruselTrabajo(-1)">&#10094;</button>
@@ -377,7 +557,7 @@
             </li>
             <li>Clima: Subtropical húmedo, lo que explica la vegetación frondosa y el calor durante gran parte del año.
             </li>
-            <li> Espacio histórico: Fundacional (1879), con monumentos como el de San Martín y bustos de próceres.
+            <li>Espacio histórico: Fundacional (1879), con monumentos como el de San Martín y bustos de próceres.
             </li>
             <li>Arquitectura: Edificios históricos (Casa de Gobierno, Iglesia Catedral) con estilo neoclásico/ecléctico.
             </li>
@@ -403,56 +583,56 @@
                     <p>Perspectiva cotidiana 4</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/5.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/5.jpg" alt="Guía Real 5">
+                    <p>Perspectiva cotidiana 5</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/6.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/6.jpg" alt="Guía Real 6">
+                    <p>Perspectiva cotidiana 6</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/7.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/7.jpg" alt="Guía Real 7">
+                    <p>Perspectiva cotidiana 7</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/8.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/8.jpg" alt="Guía Real 8">
+                    <p>Perspectiva cotidiana 8</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/9.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/9.jpg" alt="Guía Real 9">
+                    <p>Perspectiva cotidiana 9</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/10.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/10.jpg" alt="Guía Real 10">
+                    <p>Perspectiva cotidiana 10</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/11.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/11.jpg" alt="Guía Real 11">
+                    <p>Perspectiva cotidiana 11</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/12.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/12.jpg" alt="Guía Real 12">
+                    <p>Perspectiva cotidiana 12</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/13.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/13.jpg" alt="Guía Real 13">
+                    <p>Perspectiva cotidiana 13</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/14.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/14.jpg" alt="Guía Real 14">
+                    <p>Perspectiva cotidiana 14</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/15.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/15.jpg" alt="Guía Real 15">
+                    <p>Perspectiva cotidiana 15</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/16.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/16.jpg" alt="Guía Real 16">
+                    <p>Perspectiva cotidiana 16</p>
                 </div>
                 <div class="carrusel-guia-item">
-                    <img src="assets/real/17.jpg" alt="Guía Real 4">
-                    <p>Perspectiva cotidiana 4</p>
+                    <img src="assets/real/17.jpg" alt="Guía Real 17">
+                    <p>Perspectiva cotidiana 17</p>
                 </div>
             </div>
             <button class="carrusel-boton prev-guia" onclick="moverCarruselGuia(-1)">&#10094;</button>
@@ -497,29 +677,35 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4825.086558620185!2d-58.17681412342414!3d-26.185157563200736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945ca5e47a5c896b%3A0x92f75f7383d1f8e5!2sPlaza%20Gral.%20San%20Mart%C3%ADn!5e1!3m2!1ses-419!2sar!4v1757897504761!5m2!1ses-419!2sar"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
-
         </div>
         <span> En imágenes satelitales (Google Maps, Google Earth), se identifica claramente como:
-
             Un área verde rectangular en el damero urbano.
-
             Rodeada por manzanas densamente construidas.
-
             Se distingue su patrón simétrico con caminos diagonales que convergen en el monumento central.
-
             Alrededor se observan edificios de techos claros (Casa de Gobierno, Municipalidad, Catedral), que contrastan
             con el verde de la plaza.
         </span>
     </section>
 
-    <section id="ubicacion">
+    <section id="conclusion">
         <h2>Conclusión para el Proyecto</h2>
         <span> La Plaza General San Martín es mucho más que un espacio verde: es el corazón geográfico, histórico y
             cultural de Formosa. Su ubicación céntrica, su diseño reconocible desde el aire, su blend de naturaleza y
             cultura, y su rol como polo turístico la convierten en un caso de estudio ideal para entender la interacción
-            entre el ser humano y su entorno en el noreste argentino.
+            entre el ser humano y su entorno en el noreste argentino.
         </span>
     </section>
+
+    <!-- Modal para imágenes en pantalla completa -->
+    <div class="modal" id="modal-imagen">
+        <div class="modal-contenedor">
+            <img class="modal-imagen" id="modal-imagen-src" src="" alt="Imagen ampliada">
+            <button class="modal-boton prev-modal" onclick="navegarModal(-1)">&#10094;</button>
+            <button class="modal-boton next-modal" onclick="navegarModal(1)">&#10095;</button>
+            <button class="modal-cerrar" onclick="cerrarModal()">✖</button>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2025 Plaza de Formosa. Explora, disfruta y vive la experiencia.</p>
     </footer>
@@ -556,16 +742,83 @@
         const itemsGuia = document.querySelectorAll('.carrusel-guia-item');
         const totalItemsGuia = itemsGuia.length;
 
+        let visibleItemsGuia = window.innerWidth <= 768 ? 1 : 3;
+
+        window.addEventListener('resize', () => {
+            visibleItemsGuia = window.innerWidth <= 768 ? 1 : 3;
+            moverCarruselGuia(0);
+        });
+
         function moverCarruselGuia(direction) {
             const contenedor = document.getElementById('carrusel-guia-contenedor');
-            const itemWidth = itemsGuia[0].offsetWidth + 20; // Incluye margen
-            currentIndexGuia = Math.max(0, Math.min(currentIndexGuia + direction, totalItemsGuia - 3));
+            const itemWidth = itemsGuia[0].offsetWidth + 20;
+            currentIndexGuia = Math.max(0, Math.min(currentIndexGuia + direction, totalItemsGuia - visibleItemsGuia));
             contenedor.style.transform = `translateX(-${currentIndexGuia * itemWidth}px)`;
         }
 
+        // Modal para imágenes
+        let modalImages = [];
+        let modalIndex = 0;
+        let modalType = '';
+
+        function abrirModal(index, type) {
+            const modal = document.getElementById('modal-imagen');
+            const modalImg = document.getElementById('modal-imagen-src');
+            modalImages = type === 'trabajo' ? Array.from(itemsTrabajo).map(item => item.querySelector('img').src) : Array.from(itemsGuia).map(item => item.querySelector('img').src);
+            modalIndex = index;
+            modalType = type;
+            modalImg.src = modalImages[modalIndex];
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('modal-imagen');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function navegarModal(direction) {
+            modalIndex = (modalIndex + direction + modalImages.length) % modalImages.length;
+            document.getElementById('modal-imagen-src').src = modalImages[modalIndex];
+        }
+
+        // Añadir eventos de clic a las imágenes
+        itemsTrabajo.forEach((item, index) => {
+            item.addEventListener('click', () => abrirModal(index, 'trabajo'));
+        });
+
+        itemsGuia.forEach((item, index) => {
+            item.addEventListener('click', () => abrirModal(index, 'guia'));
+        });
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('modal-imagen').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                cerrarModal();
+            }
+        });
+
+        // Soporte para deslizamiento (swipe) en móviles
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.getElementById('modal-imagen').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.getElementById('modal-imagen').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                navegarModal(1); // Deslizar a la izquierda
+            } else if (touchEndX - touchStartX > 50) {
+                navegarModal(-1); // Deslizar a la derecha
+            }
+        });
+
         // Inicializar carruseles
         actualizarCarruselTrabajo();
+        moverCarruselGuia(0);
     </script>
 </body>
-
 </html>
