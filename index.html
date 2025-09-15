@@ -457,6 +457,8 @@
         <p>Explora el corazón verde de Formosa, Argentina</p>
     </header>
 
+    <audio id="audio-auto" src="assets/audio/2.dat.unknown" preload="auto"></audio>
+
     <section id="info-turistica">
         <h2>Información Turística</h2>
         <div class="info-turistica">
@@ -654,7 +656,7 @@
         <h2>Audios Relacionados</h2>
         <p>Escucha sonidos ambientales de la plaza.</p>
         <audio controls>
-            <source src="audio-plaza.mp3" type="audio/mpeg">
+            <source src="assets/audio/2.dat.unknown" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.
         </audio>
         <audio controls>
@@ -711,6 +713,16 @@
     </footer>
 
     <script>
+        // Reproducción automática del audio después de 2 segundos
+        window.addEventListener('load', () => {
+            const audioAuto = document.getElementById('audio-auto');
+            setTimeout(() => {
+                audioAuto.play().catch((error) => {
+                    console.log('Error al reproducir el audio automáticamente:', error);
+                });
+            }, 1000);
+        });
+
         // Carrusel Trabajo de Campo
         let currentIndexTrabajo = 0;
         const itemsTrabajo = document.querySelectorAll('.carrusel-trabajo-item');
