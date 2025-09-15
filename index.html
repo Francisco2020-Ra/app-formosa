@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,39 +10,45 @@
             font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #e6f3e6, #f4f4f4);
+            background: linear-gradient(to bottom, #014e01, #f4f4f4);
             color: #333;
             line-height: 1.6;
         }
+
         header {
             background: url('https://via.placeholder.com/1200x300?text=Plaza+San+Martín') no-repeat center center/cover;
             color: white;
             text-align: center;
             padding: 60px 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+
         header h1 {
             font-size: 3em;
             margin: 0;
         }
+
         header p {
             font-size: 1.2em;
             margin-top: 10px;
         }
+
         section {
             padding: 40px;
             margin: 20px auto;
             max-width: 1200px;
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
+
         h2 {
             color: #2e7d32;
             font-size: 2em;
             text-align: center;
             margin-bottom: 20px;
         }
+
         .carrusel-trabajo {
             position: relative;
             width: 100%;
@@ -50,6 +57,7 @@
             margin: 20px auto;
             perspective: 1000px;
         }
+
         .carrusel-trabajo-contenedor {
             position: relative;
             width: 100%;
@@ -58,41 +66,50 @@
             justify-content: center;
             align-items: center;
         }
+
         .carrusel-trabajo-item {
             position: absolute;
             width: 60%;
             max-width: 400px;
-            height: 400px; /* Tamaño fijo para todas las imágenes */
+            height: 400px;
+            /* Tamaño fijo para todas las imágenes */
             transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
         }
+
         .carrusel-trabajo-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que las imágenes mantengan proporciones */
+            object-fit: cover;
+            /* Asegura que las imágenes mantengan proporciones */
             border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             border: 2px solid #2e7d32;
         }
+
         .carrusel-trabajo-item.active {
             transform: translateX(0) scale(1);
             opacity: 1;
             z-index: 10;
         }
+
         .carrusel-trabajo-item.left {
             transform: translateX(-60%) scale(0.8);
             opacity: 0.6;
             z-index: 5;
         }
+
         .carrusel-trabajo-item.right {
             transform: translateX(60%) scale(0.8);
             opacity: 0.6;
             z-index: 5;
         }
+
         .carrusel-trabajo-item.hidden {
             transform: translateX(0) scale(0.6);
             opacity: 0;
             z-index: 0;
         }
+
         .carrusel-guia {
             position: relative;
             overflow: hidden;
@@ -100,31 +117,37 @@
             max-width: 1200px;
             margin: 20px auto;
         }
+
         .carrusel-guia-contenedor {
             display: flex;
             transition: transform 0.5s ease;
         }
+
         .carrusel-guia-item {
             flex: 0 0 33.33%;
             padding: 10px;
             box-sizing: border-box;
             background-color: #f9f9f9;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin: 10px;
             text-align: center;
             transition: transform 0.3s ease;
         }
+
         .carrusel-guia-item:hover {
             transform: scale(1.05);
         }
+
         .carrusel-guia-item img {
             width: 100%;
-            height: 200px; /* Tamaño fijo para todas las imágenes */
+            height: 200px;
+            /* Tamaño fijo para todas las imágenes */
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid #2e7d32;
         }
+
         .carrusel-boton {
             position: absolute;
             top: 50%;
@@ -137,52 +160,68 @@
             font-size: 20px;
             border-radius: 50%;
             transition: background-color 0.3s ease;
-            z-index: 15; /* Aumentado para asegurar que los botones sean clicables */
+            z-index: 15;
+            /* Aumentado para asegurar que los botones sean clicables */
         }
+
         .carrusel-boton:hover {
             background-color: rgba(46, 125, 50, 1);
         }
+
         .carrusel-boton.prev-trabajo {
-            left: 20px; /* Ajustado para mejor visibilidad */
+            left: 20px;
+            /* Ajustado para mejor visibilidad */
         }
+
         .carrusel-boton.next-trabajo {
-            right: 20px; /* Ajustado para mejor visibilidad */
+            right: 20px;
+            /* Ajustado para mejor visibilidad */
         }
+
         .carrusel-boton.prev-guia {
             left: 20px;
         }
+
         .carrusel-boton.next-guia {
             right: 20px;
         }
+
         .galeria {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
+
         .galeria img {
             width: 100%;
-            height: 200px; /* Tamaño fijo para todas las imágenes */
+            height: 200px;
+            /* Tamaño fijo para todas las imágenes */
             object-fit: cover;
             border-radius: 12px;
             border: 1px solid #2e7d32;
             transition: transform 0.3s ease;
         }
+
         .galeria img:hover {
             transform: scale(1.05);
         }
+
         audio {
             width: 100%;
             margin-top: 10px;
             border-radius: 8px;
         }
+
         .info-turistica {
             text-align: center;
         }
+
         .info-turistica p {
             font-size: 1.1em;
             margin: 10px 0;
         }
+
         .info-turistica ul {
             list-style: none;
             padding: 0;
@@ -190,15 +229,18 @@
             max-width: 600px;
             margin: 20px auto;
         }
+
         .info-turistica ul li {
             background: url('https://via.placeholder.com/20?text=🌿') no-repeat left center;
             padding-left: 30px;
             margin: 10px 0;
             font-size: 1.1em;
         }
+
         .mapa {
             text-align: center;
         }
+
         .mapa iframe {
             width: 100%;
             max-width: 800px;
@@ -207,10 +249,12 @@
             border-radius: 12px;
             margin-top: 20px;
         }
+
         .mapa p {
             font-size: 1.1em;
             margin: 10px 0;
         }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -219,12 +263,14 @@
             position: relative;
             width: 100%;
         }
+
         footer p {
             margin: 0;
             font-size: 0.9em;
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Plaza San Martín de Formosa</h1>
@@ -234,13 +280,19 @@
     <section id="info-turistica">
         <h2>Información Turística</h2>
         <div class="info-turistica">
-            <p>La Plaza San Martín es el principal espacio público de Formosa, un lugar lleno de historia, cultura y naturaleza. Rodeada de edificios emblemáticos y frondosos árboles, es el punto de encuentro para locales y visitantes.</p>
+            <p>La Plaza San Martín es el principal espacio público de Formosa, un lugar lleno de historia, cultura y
+                naturaleza. Rodeada de edificios emblemáticos y frondosos árboles, es el punto de encuentro para locales
+                y visitantes.</p>
             <ul>
-                <li><strong>Historia:</strong> Inaugurada en 1898, lleva el nombre del Libertador General San Martín, héroe nacional.</li>
+                <li><strong>Historia:</strong> Inaugurada en 1898, lleva el nombre del Libertador General San Martín,
+                    héroe nacional.</li>
                 <li><strong>Actividades:</strong> Ideal para caminatas, eventos culturales y ferias artesanales.</li>
-                <li><strong>Atracciones Cercanas:</strong> Catedral Nuestra Señora del Carmen y el Museo Histórico Provincial.</li>
-                <li><strong>Horario:</strong> Abierta las 24 horas, con eventos especiales durante los fines de semana.</li>
-                <li><strong>Consejo:</strong> No te pierdas los atardeceres con vista al río Paraguay, a pocos pasos de la plaza.</li>
+                <li><strong>Atracciones Cercanas:</strong> Catedral Nuestra Señora del Carmen y el Museo Histórico
+                    Provincial.</li>
+                <li><strong>Horario:</strong> Abierta las 24 horas, con eventos especiales durante los fines de semana.
+                </li>
+                <li><strong>Consejo:</strong> No te pierdas los atardeceres con vista al río Paraguay, a pocos pasos de
+                    la plaza.</li>
             </ul>
         </div>
     </section>
@@ -308,8 +360,21 @@
     </section>
 
     <section id="guia-real">
-        <h2>Guía Real</h2>
+        <h2>Paisaje Natural y Cultural</h2>
         <p>Fotografías que muestran la plaza desde una perspectiva realista y cotidiana.</p>
+        <ul>
+            <li>Vegetación: Predominan árboles autóctonos y exóticos (lapachos, palmeras, jacarandás) que forman un
+                dosel arbóreo.
+            </li>
+            <li>Clima: Subtropical húmedo, lo que explica la vegetación frondosa y el calor durante gran parte del año.
+            </li>
+            <li> Espacio histórico: Fundacional (1879), con monumentos como el de San Martín y bustos de próceres.
+            </li>
+            <li>Arquitectura: Edificios históricos (Casa de Gobierno, Iglesia Catedral) con estilo neoclásico/ecléctico.
+            </li>
+            <li>Uso del espacio: Es un lugar de encuentro social, recreativo y cultural (actos, ferias, eventos).
+            </li>
+        </ul>
         <div class="carrusel-guia">
             <div class="carrusel-guia-contenedor" id="carrusel-guia-contenedor">
                 <div class="carrusel-guia-item">
@@ -328,55 +393,55 @@
                     <img src="assets/real/4.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/5.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/6.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/7.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/8.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/9.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/10.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/11.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/12.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/13.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/14.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/15.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/16.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
-                                <div class="carrusel-guia-item">
+                <div class="carrusel-guia-item">
                     <img src="assets/real/17.jpg" alt="Guía Real 4">
                     <p>Perspectiva cotidiana 4</p>
                 </div>
@@ -411,12 +476,41 @@
 
     <section id="ubicacion">
         <h2>Ubicación y Cómo Llegar</h2>
+        <span>Ubicación relativa: Está situada en el noreste de Argentina, en la región del Litoral, cerca de la
+            frontera con Paraguay (a orillas del río Paraguay). Es el núcleo urbano fundacional de la ciudad.
+        </span>
         <div class="mapa">
-            <p>La Plaza San Martín está ubicada en el centro de Formosa, en la intersección de las calles Maipú y 25 de Mayo. Aquí puedes ver su ubicación exacta y planificar tu visita. Haz clic en el mapa para obtener indicaciones.</p>
-            <iframe src="https://www.google.com/maps/embed/v1/place?key=&q=Plaza+San+Martín,+Formosa,+Argentina&maptype=satellite" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>La Plaza San Martín está ubicada en el centro de Formosa, en la intersección de las calles Maipú y 25 de
+                Mayo.
+                Aquí puedes ver su ubicación exacta y planificar tu visita. Haz clic en el mapa para obtener
+                indicaciones.</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4825.086558620185!2d-58.17681412342414!3d-26.185157563200736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945ca5e47a5c896b%3A0x92f75f7383d1f8e5!2sPlaza%20Gral.%20San%20Mart%C3%ADn!5e1!3m2!1ses-419!2sar!4v1757897504761!5m2!1ses-419!2sar"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
         </div>
+        <span> En imágenes satelitales (Google Maps, Google Earth), se identifica claramente como:
+
+            Un área verde rectangular en el damero urbano.
+
+            Rodeada por manzanas densamente construidas.
+
+            Se distingue su patrón simétrico con caminos diagonales que convergen en el monumento central.
+
+            Alrededor se observan edificios de techos claros (Casa de Gobierno, Municipalidad, Catedral), que contrastan
+            con el verde de la plaza.
+        </span>
     </section>
 
+    <section id="ubicacion">
+        <h2>Conclusión para el Proyecto</h2>
+        <span> La Plaza General San Martín es mucho más que un espacio verde: es el corazón geográfico, histórico y
+            cultural de Formosa. Su ubicación céntrica, su diseño reconocible desde el aire, su blend de naturaleza y
+            cultura, y su rol como polo turístico la convierten en un caso de estudio ideal para entender la interacción
+            entre el ser humano y su entorno en el noreste argentino.
+        </span>
+    </section>
     <footer>
         <p>&copy; 2025 Plaza de Formosa. Explora, disfruta y vive la experiencia.</p>
     </footer>
@@ -464,4 +558,5 @@
         actualizarCarruselTrabajo();
     </script>
 </body>
+
 </html>
