@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -456,7 +457,13 @@
     </header>
 
     <audio id="audio-auto" src="assets/audio/2.dat.unknown" preload="auto"></audio>
-
+    <section id="audios">
+        <h2>Audio: guia turistica de la Plaza Gral.San Martin</h2>
+        <audio controls>
+            <source src="assets/audio/2.dat.unknown" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </section>
     <section id="info-turistica">
         <h2>Información Turística</h2>
         <div class="info-turistica">
@@ -648,19 +655,8 @@
         </div>
     </section>
 
-    <section id="audios">
-        <h2>Audio: guia turistica de la Plaza San Martin</h2>
-        <audio controls>
-            <source src="assets/audio/2.dat.unknown" type="audio/mpeg">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-    </section>
-
     <section id="ubicacion">
         <h2>Ubicación y Cómo Llegar</h2>
-        <span>Ubicación relativa: Está situada en el noreste de Argentina, en la región del Litoral, cerca de la
-            frontera con Paraguay (a orillas del río Paraguay). Es el núcleo urbano fundacional de la ciudad.
-        </span>
         <div class="mapa">
             <p>La Plaza San Martín está ubicada en el centro de Formosa, en la intersección de las calles Maipú y 25 de
                 Mayo.
@@ -671,6 +667,9 @@
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        <span>Ubicación relativa: Está situada en el noreste de Argentina, en la región del Litoral, cerca de la
+            frontera con Paraguay (a orillas del río Paraguay). Es el núcleo urbano fundacional de la ciudad.
+        </span>
         <span> En imágenes satelitales (Google Maps, Google Earth), se identifica claramente como:
             Un área verde rectangular en el damero urbano.
             Rodeada por manzanas densamente construidas.
@@ -824,4 +823,5 @@
         moverCarruselGuia(0);
     </script>
 </body>
+
 </html>
